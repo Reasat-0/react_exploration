@@ -12,6 +12,13 @@ import EmojiC from './components/Composition_Or_Inheritence/Composition/Emoji'
 import TextC from './components/Composition_Or_Inheritence/Composition/Text'
 import BracketC from './components/Composition_Or_Inheritence/Composition/Bracket'
 
+
+import ClickCounterBefore from './components/HOC/BeforeHOC/ClickCounter'
+
+
+import ClickCounterAfter from './components/HOC/AfterHOC/ClickCounter'
+import HoverCounterAfter from './components/HOC/AfterHOC/HoverCounter'
+
 const App = props => {
   return (
     // <NavMenu/>
@@ -20,7 +27,7 @@ const App = props => {
       {/* <TempCalculator/> */}
 
 
-      {/* Composition or Inheritence */}
+      {/* ============= Composition or Inheritence ================= */}
 
       {/* Demerits of Inheritence 
       
@@ -39,7 +46,7 @@ const App = props => {
           Parent will send that content by a parameter and will be received in child as props.
       */}
 
-      <EmojiC>
+      {/* <EmojiC>
         { 
           ({addEmo}) => 
               (
@@ -55,8 +62,26 @@ const App = props => {
           
           }
 
-      </EmojiC>
+      </EmojiC> */}
 
+      {/* ============= end of Composition or Inheritence ================= */}
+
+
+      {/* ============= Higher Order Component HOC =============== */}
+      {/* Lets say i have two counter having almost same functionality. 
+      
+        Like we have one click and one mouse over counter...we needed to create two components with almost
+        same code. So, we had code duplicacy.
+
+        So we can make a component whcih will receive an original component as parameter and return
+        a new component with some changes data. That can be valid for the original component
+      */}
+
+
+      <ClickCounterBefore/>
+
+      <ClickCounterAfter/>
+      <HoverCounterAfter/>
 
     </>
   );
