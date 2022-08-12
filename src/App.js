@@ -13,11 +13,45 @@ import TextC from './components/Composition_Or_Inheritence/Composition/Text'
 import BracketC from './components/Composition_Or_Inheritence/Composition/Bracket'
 
 
+// Higher Order Component
 import ClickCounterBefore from './components/HOC/BeforeHOC/ClickCounter'
 
 
 import ClickCounterAfter from './components/HOC/AfterHOC/ClickCounter'
 import HoverCounterAfter from './components/HOC/AfterHOC/HoverCounter'
+
+
+
+// Render Props
+import RenderProps from './components/RenderProps'
+import Bulb from './components/RenderProps/UniqueComponents/Bulb'
+import Fan from './components/RenderProps/UniqueComponents/Fan'
+
+
+// Custom Context
+import BuildingContext from './CustomContexts/buildingContext'
+
+// Context API -
+import ContextAPI from './components/Ctxt_API_Hands_On';
+import Cabin from './components/Ctxt_API_Hands_On/Building_to_work/Shopping/Floor/Cabin/Cabin.js';
+import Room from './components/Ctxt_API_Hands_On/Building_to_work/Shopping/Floor/Cabin/Room/Room.js';
+
+
+
+
+// ============= Again ==============
+
+// lifting state up...
+import TemperatureCalculator from "./components/LiftingStateUp_again/TemperatureCalculator"
+
+
+
+
+
+
+
+
+
 
 const App = props => {
   return (
@@ -67,6 +101,8 @@ const App = props => {
       {/* ============= end of Composition or Inheritence ================= */}
 
 
+
+
       {/* ============= Higher Order Component HOC =============== */}
       {/* Lets say i have two counter having almost same functionality. 
       
@@ -78,10 +114,59 @@ const App = props => {
       */}
 
 
-      <ClickCounterBefore/>
+      {/* 
+      
+        <ClickCounterBefore/>
 
-      <ClickCounterAfter/>
-      <HoverCounterAfter/>
+        <ClickCounterAfter/>
+        <HoverCounterAfter/> 
+      
+      */}
+
+      {/* ============= end of Higher Order Component HOC =============== */}
+
+
+      
+      {/* ================ Render Props ==================== */}
+
+
+      {/* <RenderProps render={(bill, turnedOn , turnOnOff) => ( 
+          <Bulb bill={bill} turnedOn={turnedOn} turnOnOff={turnOnOff}/>
+        )}
+      /> */}
+
+      
+      {/* ============= end of Render Props =============== */}
+
+
+      {/* ================ Custom Context ============ */}
+
+      {/* ================ Custom Context ============ */}
+
+      {/* ================ Context API ==================== */}
+
+        <ContextAPI>
+          { (test_value) => ( 
+            <Room test_value={test_value}/> 
+          )}
+        </ContextAPI>
+      {/* ============= end of Context API =============== */}
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* ################ ================== AGain ================== ################## */}
+
+
+      <TemperatureCalculator/>
 
     </>
   );
